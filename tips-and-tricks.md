@@ -7,3 +7,6 @@ LARAVEL v9.26.1  plugin v0.5.4
 
 
 npm install && npm run dev 
+
+User: test@test.com
+pass:testtest
