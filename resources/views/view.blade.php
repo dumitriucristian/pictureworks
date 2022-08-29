@@ -14,8 +14,11 @@
     <section id="main">
         <header>
             <span class="avatar"><img src="https://picsum.photos/200/300" alt="some script" /></span>
-            <h1>Usern Name</h1>
-            <p>User Coments</p>
+            <h1>{{$user->name}}</h1>
+
+            @foreach ($comments as $comment)
+                <p><i>{{ $comment->text}}</i></p>
+            @endforeach
         </header>
     </section>
     <footer id="footer">

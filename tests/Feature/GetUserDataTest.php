@@ -33,4 +33,9 @@ class GetUserDataTest extends TestCase
 
         $this->assertCount(3,$user->comments);
     }
+
+    public function test_get_invalid_id_throw_error()
+    {
+
+    }
 }
