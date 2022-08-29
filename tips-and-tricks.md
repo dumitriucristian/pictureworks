@@ -5,3 +5,5 @@ LARAVEL v9.26.1  plugin v0.5.4
 
 ➜  APP_URL: http://localhost  
 
+
+npm install && npm run dev 
