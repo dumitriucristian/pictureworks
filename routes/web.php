@@ -26,6 +26,8 @@ Route::get('/view', function () {
 Route::resource('user', UserController::class);
 
 
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
