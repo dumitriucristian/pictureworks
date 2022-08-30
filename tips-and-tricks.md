@@ -10,3 +10,5 @@ npm install && npm run dev
 
 User: test@test.com
 pass:testtest
+
+go into wsl and run ```./vendor/bin/sail up```  

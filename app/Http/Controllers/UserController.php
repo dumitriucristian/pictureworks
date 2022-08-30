@@ -53,8 +53,7 @@ class UserController extends Controller
         );
 
         if($validator->fails()){
-            //many things can be done
-            return redirect('/dashboard')->with('status', 'Invalid  request. Please try with a valid id');
+            return abort(404, "No such user (3)");
         };
         $user = User::findOrFail($id);
 
