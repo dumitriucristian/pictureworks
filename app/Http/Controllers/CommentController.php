@@ -43,10 +43,9 @@ class CommentController extends Controller
             Comment::create($request->all());
 
         }catch(\Exception $e){
-            return abort(500, "Could not update database: " .$e->getMessage());
+            return abort(404, "No such user: ");
         }
     }
-
 
     /**
      * Display the specified resource.
