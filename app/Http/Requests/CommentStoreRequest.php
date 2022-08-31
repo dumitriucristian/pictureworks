@@ -16,9 +16,11 @@ class CommentStoreRequest extends FormRequest
      */
     public function authorize()
     {
-        if(!$this->isJson()){
+
+       if($this->isNotValidJson())
+       {
             return abort(422, 'Invalid POST json');
-        }
+       }
 
         $passwordInput = strtoupper($this->input('password'));
         if( $passwordInput != self::$password) {
@@ -54,6 +56,13 @@ class CommentStoreRequest extends FormRequest
         return [
             'user_id.integer' => 'Id required',
             'user_id.required' => 'Invalid Id',
+            'text.required' => 'comment required'
         ];
     }
+
+    protected function isNotValidJson()
+    {
+        return (in_array('application/json',$this->getAcceptableContentTypes()) && ($this->isJson() === false)) ? true:false;
+    }
+
 }

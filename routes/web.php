@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +26,7 @@ Route::get('/view', function () {
 
 Route::resource('user', UserController::class);
 
-
+Route::post('/user/{user}/comments',  [CommentController::class, 'save']);
 
 
 Route::get('/dashboard', function () {

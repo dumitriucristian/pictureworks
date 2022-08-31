@@ -10,7 +10,6 @@ use App\Models\User;
 class CommentController extends Controller
 {
 
-    private static $password = '720DF6C2482218518FA20FDC52D4DED7ECC043AB';
     /**
      * Display a listing of the resource.
      *
@@ -40,16 +39,14 @@ class CommentController extends Controller
         $request->validated();
 
         try{
-
             User::findOrFail($request->input('user_id'));
-
-            $comment = Comment::create($request->all());
-
+            Comment::create($request->all());
 
         }catch(\Exception $e){
             return abort(500, "Could not update database: " .$e->getMessage());
         }
     }
+
 
     /**
      * Display the specified resource.
